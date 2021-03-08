@@ -11,7 +11,6 @@ class LoginPage(BasePage):
     def should_be_login_url(self):
         assert self.browser.current_url.find("login") != -1, "login отсутствует в текущем url браузера"
 
-
     def should_be_login_form(self):
         # реализуйте проверку, что есть форма логина
         assert self.is_element_present(*LoginPagelocators.login_page), "LoginForm is not presented"
