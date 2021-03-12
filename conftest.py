@@ -16,7 +16,7 @@ def browser(request):
     options = Options()
     options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
     driver = webdriver.Chrome(options=options)
-    print("\nbrowser Chrome start...")
     yield driver
+    print("\nbrowser Chrome start...")
     driver.quit()
     print("\nbrowser Chrome finish")
