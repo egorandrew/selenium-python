@@ -7,13 +7,10 @@ class ProductPage(BasePage):
         self.browser.find_element(*BasketAddPageLocators.ADD_IN_BASKET).click()
 
     def book_in_basket(self, name):
-        p1 = self.browser.find_element(*BasketAddPageLocators.BOOK_NAME(name)).text
-        print(p1)
-        p2 = self.browser.find_element(*BasketAddPageLocators.BOOK_NAME_ADD).text
-        print(p2)
-        assert p1 == p2, "Товар не добавлен в корзину "
+        assert name == self.browser.find_element(*BasketAddPageLocators.BOOK_NAME_ADD).text, "Товар не добавлен в " \
+                                                                                             "корзину "
 
     def book_price(self, price):
-        p1 = self.browser.find_element(*BasketAddPageLocators.BOOK_PRICE(price)).text
-        p2 = self.browser.find_element(*BasketAddPageLocators.BOOK_PRICE_ADD).text
-        assert p1 == p2, "Стоимость корзины совпадает с ценой товара"
+        assert price == self.browser.find_element(*BasketAddPageLocators.BOOK_PRICE_ADD).text, "Стоимость корзины " \
+                                                                                               "совпадает с ценой " \
+                                                                                               "товара "
