@@ -1,6 +1,11 @@
 from selenium.webdriver.common.by import By
 
 
+class BasePageLocators:
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
+
 class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
@@ -16,4 +21,5 @@ class BasketAddPageLocators:
     ADD_IN_BASKET = (By.XPATH, "//button[@value='Добавить в корзину']")
     BOOK_PRICE = (By.XPATH, '//div[@class=\'col-sm-6 product_main\']/p[@class=\'price_color\']')
     BOOK_PRICE_ADD = (By.XPATH, "//div[@class='alertinner ']/p/strong")
+    SUCCESS_MESSAGE = (By.XPATH, "//div[contains(text(), 'Ваша корзина удовлетворяет условиям')]")
 
