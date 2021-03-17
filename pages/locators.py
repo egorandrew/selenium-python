@@ -8,6 +8,7 @@ class BasePageLocators:
 
 class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    BASKET_VIEW = (By.XPATH, "//span/a[text()='Посмотреть корзину']")
 
 
 class LoginPageLocators:
@@ -22,4 +23,9 @@ class BasketAddPageLocators:
     BOOK_PRICE = (By.XPATH, '//div[@class=\'col-sm-6 product_main\']/p[@class=\'price_color\']')
     BOOK_PRICE_ADD = (By.XPATH, "//div[@class='alertinner ']/p/strong")
     SUCCESS_MESSAGE = (By.XPATH, "//div[contains(text(), 'Ваша корзина удовлетворяет условиям')]")
+
+
+class BasketPageLocators:
+    EMPTY_BASKET_MESSAGE = (By.XPATH, "//div/p[contains(text(), 'Ваша корзина пуста')]")
+    PRODUCT_IN_BASKET = (By.XPATH, "//div/h2[contains(text(), 'Товары в корзине')]")
 
